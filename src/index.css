@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100..900;1,100..900&family=DM+Serif+Display:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "DM Serif Display", "Georgia", serif;
+  --font-sans: "DM Sans", "Helvetica Neue", sans-serif;
+  
+  --color-forest-deep: #0F2419;
+  --color-forest-medium: #153223;
+  --color-forest-light: #1E4631;
+  --color-forest-dark: #0A1911;
+  --color-lime-accent: #7BC67E;
+  --color-lime-hover: #9BE59E;
+  --color-cream-text: #F0F4E8;
+  --color-cream-muted: #B3C1B5;
+}
+
+body {
+  background-color: var(--color-forest-deep);
+  color: var(--color-cream-text);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism utility for Sophisticated Dark design theme */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom scrollbar matching forest theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-forest-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-forest-medium);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lime-accent);
+}
+
+/* Smooth custom slide animation helper for mobile menu */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.25s ease-out forwards;
+}
+
